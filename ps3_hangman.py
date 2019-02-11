@@ -16,7 +16,7 @@ WORDLIST_FILENAME = "words.txt"
 def loadWords():
     """
     Returns a list of valid words. Words are strings of lowercase letters.
-    
+
     Depending on the size of the word list, this function may
     take a while to finish.
     """
@@ -100,16 +100,16 @@ def hangman(secretWord):
 
     Starts up an interactive game of Hangman.
 
-    * At the start of the game, let the user know how many 
+    * At the start of the game, let the user know how many
       letters the secretWord contains.
 
     * Ask the user to supply one guess (i.e. letter) per round.
 
-    * The user should receive feedback immediately after each guess 
+    * The user should receive feedback immediately after each guess
       about whether their guess appears in the computers word.
 
-    * After each round, you should also display to the user the 
-      partially guessed word so far, as well as letters that the 
+    * After each round, you should also display to the user the
+      partially guessed word so far, as well as letters that the
       user has not yet guessed.
 
     Follows the other limitations detailed in the problem write-up.
@@ -128,7 +128,6 @@ def hangman(secretWord):
         guess = input("Please guess a letter: ")
         if guess in lettersGuessed:
             print("Oops! You've already guessed that letter: {}".format(getGuessedWord(secretWord, lettersGuessed)))
-            possibleMistakes -= 1
         elif guess in secretWord:
             lettersGuessed.append(guess)
             print("Good guess: {}".format(getGuessedWord(secretWord, lettersGuessed)))
@@ -149,4 +148,4 @@ def hangman(secretWord):
 # secretWord while you're testing)
 
 secretWord = chooseWord(wordlist).lower()
-hangman("cat")
+hangman("y")
